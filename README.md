@@ -1,3 +1,5 @@
+## Before
+
 ```bash
 ➜ yarn start
 yarn run v1.22.19
@@ -34,4 +36,30 @@ Error: missing provider (operation="sendTransaction", code=UNSUPPORTED_OPERATION
   code: 'UNSUPPORTED_OPERATION',
   operation: 'sendTransaction'
 }
+```
+
+## After 
+
+```bash
+➜ yarn start
+yarn run v1.22.19
+$ ts-node ./add-key
+Identifier did:ethr:goerli:0x020a5d2291181edfdcbd91b14e1c3b6b7e39b1c18ed19b3eace01b52318d88157a
+New key {
+  type: 'Secp256k1',
+  kid: '04bf7d8c740f0ac42ba7a8dd703272776ea64116509b3dfbb363bc6c210d0a5e3795881708c9e367cf344cb980947acba66657a18cb3cf4ddc0998f510ff4c52b5',
+  publicKeyHex: '04bf7d8c740f0ac42ba7a8dd703272776ea64116509b3dfbb363bc6c210d0a5e3795881708c9e367cf344cb980947acba66657a18cb3cf4ddc0998f510ff4c52b5',
+  meta: {
+    algorithms: [
+      'ES256K',
+      'ES256K-R',
+      'eth_signTransaction',
+      'eth_signTypedData',
+      'eth_signMessage',
+      'eth_rawSign'
+    ]
+  },
+  kms: 'local'
+}
+0x5617a43dcbf7914460fd4d4c71e0fa3c1fa87c60ad5a2042b63f10724181042b
 ```

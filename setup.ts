@@ -28,19 +28,15 @@ export const agent = createAgent<IDIDManager & IKeyManager>({
     }),
     new DIDManager({
       store: new DIDStore(dbConnection),
-      defaultProvider: 'did:ethr',
+      defaultProvider: 'did:ethr:goerli',
       providers: {
-        'did:ethr': new EthrDIDProvider({
+        'did:ethr:goerli': new EthrDIDProvider({
           defaultKms: 'local',
-          networks: [
-            {
-              network: 'goerli',
-              name: 'goerli',
-              rpcUrl: 'https://goerli.infura.io/v3/' + INFURA_PROJECT_ID,
-              gas: 1000001,
-              ttl: 31104001
-            },
-          ],
+          network: 'goerli',
+          name: 'goerli',
+          rpcUrl: 'https://goerli.infura.io/v3/' + INFURA_PROJECT_ID,
+          gas: 1000001,
+          ttl: 31104001
         }),
       },
     }),

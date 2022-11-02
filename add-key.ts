@@ -2,10 +2,7 @@ import { agent } from './setup'
 
 const main = async () => {
   const identifier = await agent.didManagerGetOrCreate({
-    alias: 'default',
-    options: {
-      network: 'goerli'
-    }
+    alias: 'default'
   })
 
   console.log('Identifier', identifier.did)
